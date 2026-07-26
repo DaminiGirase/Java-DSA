@@ -141,22 +141,23 @@ public class BSTsecond {
 
     }
 
-    public static List<Integer> inOrderT(Node root, ArrayList<Integer> list) {
+    public static void inOrderT(Node root, ArrayList<Integer> list) {
         if (root == null) {
-            return new ArrayList<>(0);
+            return;
         }
 
         inOrder(root.left, list);
         list.add(root.val);
         inOrder(root.right, list);
 
-        return list;
+        return;
     }
 
     public static void findKthSmall(Node root, int k) {
+
         ArrayList<Integer> list = new ArrayList<>();
         inOrderT(root, list);
-        Collections.sort(list, Collections.reverseOrder());
+        
         for (int i = 0; i < list.size() - 1; i++) {
             if (i == k - 1) {
                 System.out.print(list.get(i));
@@ -209,7 +210,7 @@ public class BSTsecond {
         root.right.left = new Node(5);
         root.right.right = new Node(7);
 
-        findKthSmall(root, 5);
+        findKthSmall(root, 3);
 
         // sum = 0;
         // System.out.println(sumRang(root, 2, 6));

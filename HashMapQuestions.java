@@ -7,7 +7,7 @@ public class HashMapQuestions {
 
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        int arr[] = { 1, 2 };
+        int arr[] = { 1, 2, 3, 3};
         int limit = arr.length / 3;
 
         for (int i = 0; i < arr.length; i++) {

@@ -108,16 +108,16 @@ public class nearestCars {
 
         int i = 0, k = 2;
 
-        // while (i != k) {
-        // System.out.println(pq.remove().name);
-        // i++;
-        // }
-
-        int nums[] = { 1, 2 };
-        int arr[] = KthFrequent(nums, 2);
-        for (int o = 0; o < arr.length; o++) {
-            System.out.println(arr[o]);
+        while (i != k) {
+        System.out.println(pq.remove().name);
+        i++;
         }
+
+        // int nums[] = { 1, 2 };
+        // int arr[] = KthFrequent(nums, 2);
+        // for (int o = 0; o < arr.length; o++) {
+        //     System.out.println(arr[o]);
+        // }
 
     }
 }

@@ -54,7 +54,7 @@ public class HashMaps {
 
         // HashMap<Integer, Integer> map = new HashMap<>();
 
-        // for (int i = 0; i < arr.length - 1; i++) {
+        // for (int i = 0; i < arr.length; i++) {
         // int currrent = target - arr[i];
         // if (map.containsKey(currrent)) {
         // System.out.println("true");
@@ -116,16 +116,17 @@ public class HashMaps {
         // for (int i = 0; i < arr.length; i++) {
         // sum += arr[i];
 
+        // we can do both this one and commented one
+        // map.put(0, -1);
+
         // if (sum == 0) {
         // maxLength = i + 1;
         // }
 
         // if (map.containsKey(sum)) {
-
-        // sum = i - map.get(sum);
-        // maxLength = Math.max(maxLength, sum);
+        // maxLength = Math.max(maxLength, i - map.get(sum));
         // } else {
-        // map.put(arr[i], i);
+        // map.put(sum, i);
         // }
         // }
         // System.out.println(maxLength);
@@ -156,7 +157,12 @@ public class HashMaps {
         // int sum = 0;
         // int maxLength = 0;
 
+        // we can do both this one and commented one
         // map.put(0, -1);
+        // or//
+        // if (sum == k) {
+        // maxLength = i + 1;
+        // }
 
         // for (int i = 0; i < arr.length; i++) {
         // sum += arr[i];
@@ -164,7 +170,7 @@ public class HashMaps {
         // int length = i - map.get(sum-k);
         // maxLength = Math.max(maxLength, length);
         // }
-        // if(!map.containsKey(sum-k)) {
+        // if(!map.containsKey(sum)) {
         // map.put(sum, i);
         // }
 
@@ -173,40 +179,41 @@ public class HashMaps {
 
         // smallest length
 
-        int arr[] = { 1, 2, 3, -2, 5 };
-        int k = 6;
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int sum = 0;
-        int minLength = Integer.MAX_VALUE;
+        // int arr[] = { 1, 2, 3, -2, 5 };
+        // int k = 6;
+        // HashMap<Integer, Integer> map = new HashMap<>();
+        // int sum = 0;
+        // int minLength = Integer.MAX_VALUE;
 
-        map.put(0, -1);
+        // map.put(0, -1);
 
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
-            if (map.containsKey(sum - k)) {
-                int length = i - map.get(sum - k);
-                minLength = Math.min(minLength, length);
-            }
-            map.put(sum, i);
-        }
-        System.out.println(minLength);
+        // for (int i = 0; i < arr.length; i++) {
+        // sum += arr[i];
+        // if (map.containsKey(sum - k)) {
+        // int length = i - map.get(sum - k);
+        // minLength = Math.min(minLength, length);
+        // }
+        // map.put(sum, i);
+        // }
+        // System.out.println(minLength);
 
         // count how many times target appear
 
-    //     HashMap<Integer, Integer> map = new HashMap<>();
-    //     int sum = 0;
-    //     int count = 0;
-    //     int k = 6;
-    //     int arr[] = { 1, 2, 3, -2, 5 };
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int sum = 0;
+        int count = 0;
+        int k = 6;
+        int arr[] = { 1, 2, 3, -2, 5 };
 
-    //     map.put(0, 1);
-    //     for (int i = 0; i < arr.length; i++) {
-    //         sum += arr[i];
-    //         if (map.containsKey(sum - k)) {
-    //             count += map.get(sum - k);
-    //         }
-    //           map.put(sum, map.getOrDefault(sum, 0) + 1);
-    //     }
-    //    System.out.println(count);
+        map.put(0, 1);
+        
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            if (map.containsKey(sum - k)) {
+                count += map.get(sum - k);
+            }
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
+        }
+        System.out.println(count);
     }
 }

@@ -2,7 +2,7 @@ import java.util.*;
 
 public class HashMapExcersice {
     public static void main(String[] args) {
-        String str = "aabbccdddd";
+        String str = "aabbbccdddd";
         HashMap<Character, Integer> map = new HashMap<>();
         StringBuilder sb = new StringBuilder();
 

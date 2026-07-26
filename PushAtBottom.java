@@ -199,24 +199,68 @@ public class PushAtBottom {
         return sb.toString();
     }
 
+    static class Pair {
+
+        char ch;
+        int count;
+
+        public Pair(char ch, int count) {
+            this.ch = ch;
+            this.count = count;
+        }
+    }
+
     public static String removeKDuplicate2(String str, int k) {
 
-        Stack<Character> s = new Stack<>();
-        for (int i = str.length() - 1; i >= 0; i--) {
-            if (!s.isEmpty() && s.peek() == str.charAt(i)) {
-                for (int j = i; j < k; j++) {
-                     if(str.charAt(j) == str.charAt(j+1)){
-                             s.pop();
-                     }
+        Stack<Pair> s = new Stack<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (!s.isEmpty() && s.peek().ch == ch) {
+                s.peek().count++;
+
+                if (s.peek().count == k) {
+                    s.pop();
                 }
-            }else{
-               s.push(str.charAt(i));
+            } else {
+                s.push(new Pair(ch, 1));
             }
         }
 
         StringBuilder sb = new StringBuilder();
         while (!s.isEmpty()) {
-            sb.append(s.pop());
+            Pair r = s.pop();
+            for (int i = 0; i < r.count; i++) {
+                sb.append(r.ch);
+            }
+        }
+
+        return sb.reverse().toString();
+    }
+
+    public static String removeByMap(String str, int k) {
+
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < str.length(); i++) {
+            map.put(str.charAt(i), map.getOrDefault(str.charAt(i), 0) + 1);
+        }
+
+        Iterator<Character> it = map.keySet().iterator();
+
+        while (it.hasNext()) {
+            Character key = it.next();
+
+            if (map.get(key) == k) {
+                  it.remove(); 
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            for (int i = 0; i < entry.getValue(); i++) {
+                sb.append(entry.getKey());
+            }
         }
 
         return sb.toString();
@@ -273,7 +317,7 @@ public class PushAtBottom {
 
         // System.out.println(removeDuplicate("abbaca"));
 
-        System.out.println(removeKDuplicate2("deeedbbcccbdaa", 3));
+        System.out.println(removeByMap("deeedbbcccbdaa", 3));
 
     }
 }

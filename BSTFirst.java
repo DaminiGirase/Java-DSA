@@ -243,11 +243,11 @@ public class BSTFirst {
         root = bst.insert(root, nodes[i]);
         }
 
-        System.out.println(bst.findBST(root));
+        // System.out.println(bst.findBST(root));
 
         // bst.mirror2(root);
 
-        // System.out.println(bst.isValid(root, null, null));
+        System.out.println(bst.isValid(root, null, null));
 
         // bst.printInRange(root, 5, 12);
         // bst.printAllPathRtoL(root, new ArrayList<>());

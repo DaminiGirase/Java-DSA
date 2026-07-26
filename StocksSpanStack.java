@@ -9,7 +9,7 @@ public class StocksSpanStack {
 
         for (int i = 1; i < stock.length; i++) {
             int currPrice = stock[i];
-            while (!s.isEmpty() && currPrice > stock[s.peek()]) {
+            while (!s.isEmpty() && currPrice >= stock[s.peek()]) {
                 s.pop();
             }
 

@@ -121,9 +121,9 @@ public class StackExcerces {
         // String str = "V5VB";
         // System.out.println(StringToS(str));
 
-        // System.out.println(SimplifyPath("/home/damini/gi.."));
+        System.out.println(SimplifyPath("/home/damini/.."));
 
-        System.out.println(StringToS("2[vb]"));
+        // System.out.println(StringToS("2[vb3[df]]"));
     }
 
 }

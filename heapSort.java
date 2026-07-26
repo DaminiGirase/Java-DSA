@@ -25,11 +25,11 @@ public class heapSort {
 
     public static void heapS(int arr[]) {
         int n = arr.length;
-        for (int i = n / 2; i >= 0; i--) {
-            heapify(arr, i, n);
+        for (int i = n / 2; i >= 0; i--) {  // call heapify for all acester not leaf nodes that why start from n/2
+            heapify(arr, i, n); // max heap for ascending order
         }
 
-        for (int i = n - 1; i > 0; i--) {
+        for (int i = n - 1; i > 0; i--) {  // swap largest element last
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;

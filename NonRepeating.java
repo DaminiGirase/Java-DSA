@@ -69,8 +69,8 @@ public class NonRepeating {
         q.add(5);
         q.add(6);
 
-        interLive(q);
+        // interLive(q);
 
-        // nonRepeatingString("aabccxb");
+        nonRepeatingString("aabccxb");
     }
 }

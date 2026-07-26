@@ -49,7 +49,7 @@ public class TreeExcer {
             }
 
             if (root.left == null && root.right == null) {
-                root.data = 0;
+                root.data = root.data;
             } else {
                 root.data = root.left.data + root.right.data;
             }
@@ -279,13 +279,13 @@ public class TreeExcer {
 
         // Q2
 
-        // Node root1 = new Node(1);
-        // root1.left = new Node(2);
-        // root1.right = new Node(3);
-        // root1.left.left = new Node(4);
-        // root1.left.right = new Node(5);
-        // root1.right.left = new Node(6);
-        // root1.right.right = new Node(7);
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.right.left = new Node(6);
+        root.right.right = new Node(7);
 
         // Node root2 = new Node(1);
         // root2.left = new Node(3);
@@ -301,7 +301,6 @@ public class TreeExcer {
         // System.out.println("No");
         // }
 
-        
         // invert
 
         Node root1 = new Node(1);
@@ -316,21 +315,21 @@ public class TreeExcer {
 
         // List<Node> list = tree.duplicateSubTree(root1);
         // for (int i = 0; i < list.size(); i++) {
-        //     System.out.print(list.get(i).data + " ");
+        // System.out.print(list.get(i).data + " ");
         // }
         // System.out.println(tree.pathSum(root1, 18));
 
         // List<Integer> list = tree.rightView(root1);
         // System.out.println(list);
 
-        tree.invert(root1);
+        tree.invert(root);
 
         // tree.deleteLeave(root1, 7);
-        tree.PrintPreOrder(root1);
+        // tree.PrintPreOrder(root1);
 
         // tree.KthAncester(root, 3, 1);
-        // tree.MySumTree(root);
-        // tree.PrintPreOrder(root);
+        // tree.SumTree(root);
+        tree.PrintPreOrder(root);
 
     }
 }

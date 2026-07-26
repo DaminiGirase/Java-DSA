@@ -117,6 +117,34 @@ public class MergeLinked {
             return head;
         }
 
+        // Case 1: curr1 is immediately before curr2
+        if (curr1.next == curr2) {
+            if (prev1 != null) {
+                prev1.next = curr2;
+            } else {
+                head = curr2;
+            }
+
+            curr1.next = curr2.next;
+            curr2.next = curr1;
+
+            return head;
+        }
+
+        // Case 2: curr2 is immediately before curr1
+        if (curr2.next == curr1) {
+            if (prev2 != null) {
+                prev2.next = curr1;
+            } else {
+                head = curr1;
+            }
+
+            curr2.next = curr1.next;
+            curr1.next = curr2;
+
+            return head;
+        }
+
         if (prev1 != null) {
             prev1.next = curr2;
         } else {
@@ -209,20 +237,20 @@ public class MergeLinked {
         return head;
     }
 
-    public static int firstOcurance(Node head){
+    public static int firstOcurance(Node head) {
         Node curr = head;
-        int fount  = -1;
-        while (curr!=null) {
+        int fount = -1;
+        while (curr != null) {
             boolean isUnique = true;
             Node unique = head;
-            while(unique!=null){
-               if(curr!=unique && curr.data == unique.data){
-                isUnique = false;
-                break;
-               }
-               unique = unique.next;
+            while (unique != null) {
+                if (curr != unique && curr.data == unique.data) {
+                    isUnique = false;
+                    break;
+                }
+                unique = unique.next;
             }
-            if(isUnique){
+            if (isUnique) {
                 fount = curr.data;
                 break;
             }
@@ -230,6 +258,7 @@ public class MergeLinked {
         }
         return fount;
     }
+
     public static void main(String[] args) {
         MergeLinked li1 = new MergeLinked();
         // MergeLinked li2 = new MergeLinked();
@@ -245,8 +274,8 @@ public class MergeLinked {
         // Node head = li1.remove(li1.head, 6);
         // Node head = li1.removeDuplicate(li1.head);
         // Node head = li1.shiftZero(li1.head);
-         int head = li1.firstOcurance(li1.head);
-         System.out.println(head);
+        int head = li1.firstOcurance(li1.head);
+        System.out.println(head);
 
         // li2.addLast(1);
         // li2.addLast(2);

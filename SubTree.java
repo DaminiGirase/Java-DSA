@@ -247,10 +247,11 @@ public class SubTree {
         // System.out.println(tree.isSubTree(root, subRoot));
         // tree.topView(root);
 
-        // tree.printKthLevel(root, 1, 2);
+        tree.printKthLevel(root, 1, 2);
+        
 
         // System.out.println(tree.LCA2(root, 6, 7).data);
-        System.out.println(tree.minDistance(root, 4, 7));
-        // System.out.println(tree.findSecondMinimumValue(root));
+        // System.out.println(tree.minDistance(root, 4, 7));
+        // // System.out.println(tree.findSecondMinimumValue(root));
     }
 }

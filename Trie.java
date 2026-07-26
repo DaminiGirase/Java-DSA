@@ -42,6 +42,20 @@ public class Trie {
         return curr.eow == true;
     }
 
+    public static boolean startsWith(String prefix) {
+        Node curr = root;
+        for (int i = 0; i < prefix.length(); i++) {
+            int indx = prefix.charAt(i) - 'a';
+            if (curr.children[indx] == null) {
+                return false;
+            }
+
+            curr = curr.children[indx];
+        }
+
+        return true;
+    }
+
     public static boolean wordBreak(String key) {
         if (key.length() == 0) {
             return true;
@@ -65,6 +79,7 @@ public class Trie {
             insert(words[i]);
         }
 
-        System.out.println(wordBreak(key));
+        // System.out.println(wordBreak(key));
+        System.out.println(startsWith("like"));
     }
 }

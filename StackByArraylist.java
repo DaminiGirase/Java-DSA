@@ -15,8 +15,8 @@ public class StackByArraylist {
             if(isEmpty()){
                 return -1;
             }
-            int top = list.get(list.size()-1);
-            list.remove(list.size()-1);
+            int top = list.getLast();
+            list.removeLast();
             return top;
         }
 
@@ -24,7 +24,7 @@ public class StackByArraylist {
              if(isEmpty()){
                 return -1;
             }
-            return list.get(list.size()-1);
+            return list.getLast();
         }
     }
     public static void main(String[] args) {

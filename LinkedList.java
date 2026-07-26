@@ -459,7 +459,7 @@ public class LinkedList {
     // }
 
     // Node temp = curr.next;
-    // for(int j=0; j<n && curr!=null; j++){
+    // for(int j=0; j<n && temp!=null; j++){
     // temp = temp.next;
     // }
 
