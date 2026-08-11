@@ -28,6 +28,7 @@ public class GraphAllPaths {
 
     }
 
+     // my aproach
     public static void allPaths(ArrayList<edge> graph[]) {
         ArrayList<Integer> list = new ArrayList<>();
         allPathUtil(graph, list, 5, 1);
@@ -54,6 +55,8 @@ public class GraphAllPaths {
         list.remove(list.size() - 1); // remove if destination not found after visiting all nodes
     }
 
+    // mam aproach
+    
     public static void allPathMam(ArrayList<edge> graph[], int s, int d, String path) {
         if (s == d) {
             System.out.println(path + d);

@@ -78,17 +78,23 @@ public class GraphBFS {
         }
     }
 
+    // using this count we can find number of components
+    // we can slove leetcode number of operations to connect network
+
     public static void dfs(ArrayList<edge> graph[]) {
+        int count = 0;
         boolean vis[] = new boolean[graph.length];
         for (int i = 0; i < graph.length; i++) {
             if (!vis[i]) {
+                count++;
                 dfsUtil(graph, i, vis);
             }
         }
+        System.out.println(count);
     }
 
     public static void dfsUtil(ArrayList<edge> graph[], int curr, boolean vis[]) {
-        System.out.print(curr + " ");
+        // System.out.print(curr + " ");
         vis[curr] = true;
 
         for (int i = 0; i < graph[curr].size(); i++) {
@@ -121,9 +127,9 @@ public class GraphBFS {
         ArrayList<edge> graph[] = new ArrayList[v];
         createGrapg(graph);
 
-        bfs(graph);
+        // bfs(graph);
 
-        // dfs(graph, 0, new boolean[v]);
+        dfs(graph);
         // System.out.println(hasPath(graph, 0, 6, new boolean[v]));
     }
 }

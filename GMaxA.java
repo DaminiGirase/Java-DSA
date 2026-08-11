@@ -21,22 +21,23 @@ public class GMaxA {
 
         int n = grid.length;
         int m = grid[0].length;
-
         int ans = 0;
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 count = 0;
-                dfs(i, j, n, m, grid);
+                dfs(i, j, n, m, grid, 0, 0);
 
                 if (count > ans) {
                     ans = count;
                 }
             }
         }
+      
         return ans;
     }
 
-    public static void dfs(int i, int j, int n, int m, int grid[][]) {
+    public static void dfs(int i, int j, int n, int m, int grid[][], int l, int b) {
         if (i < 0 || j < 0 | i == n || j == m || grid[i][j] == 0) {
             return;
         }
@@ -44,16 +45,16 @@ public class GMaxA {
         count++;
         grid[i][j] = 0;
 
-        dfs(i - 1, j, n, m, grid);
-        dfs(i, j - 1, n, m, grid);
-        dfs(i + 1, j, n, m, grid);
-        dfs(i, j + 1, n, m, grid);
+        dfs(i - 1, j, n, m, grid, l+1, 0);
+        dfs(i, j - 1, n, m, grid, 0, b+1);
+        dfs(i + 1, j, n, m, grid, l+1, 0);
+        dfs(i, j + 1, n, m, grid, 0, b+1);
     }
 
     public static void main(String[] args) {
-        int grid[][] = { { 1, 1, 1 }, { 0, 1, 1 }, { 1, 0, 1 } };
+        int grid[][] = { { 1, 1, 1 }, { 0, 1, 1 }, { 0, 0, 0 } };
 
-        // System.out.println(MaxArea(grid));
+        System.out.println(MaxArea(grid));
 
         // WITHOUT COSTUM CLASS
 

@@ -28,10 +28,10 @@ public class GraphBipartiteAnother {
         graph[2].add(new edge(2, 4));
 
         graph[3].add(new edge(3, 1));
-        // graph[3].add(new edge(3, 4));
+        graph[3].add(new edge(3, 4));
 
         graph[4].add(new edge(4, 2));
-        // graph[4].add(new edge(4, 3));
+        graph[4].add(new edge(4, 3));
     }
 
     public static boolean isBipartite(ArrayList<edge> graph[]) {

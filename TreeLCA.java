@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 import javax.swing.tree.TreeNode;
 
-public class SubTree {
+public class TreeLCA {
     static class Node {
         int data;
         Node left;
